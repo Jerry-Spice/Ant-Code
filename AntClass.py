@@ -45,7 +45,7 @@ class Ant(object):
         #     self.angle = self.angle-360
         # while self.angle < 0:
         #     self.angle = self.angle+360
-        self.findFood(availableFood)
+        # self.findFood(availableFood)
         if self.targetAngle == None:
             if random.randint(0,1) == 0:
                 self.angle += self.wanderAmount
