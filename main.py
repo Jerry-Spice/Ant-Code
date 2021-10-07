@@ -9,7 +9,7 @@ pygame.init()
 screen = pygame.display.set_mode((600,600))
 
 background = pygame.Surface(screen.get_size())
-background.fill((150,250,150))
+background.fill((100,210,100))
 background.convert()
 
 ants = []
@@ -36,7 +36,9 @@ while True:
             pygame.quit()
             sys.exit()
     for i in range(len(ants)):
-        pygame.draw.circle(screen, (255,255,255,0.01), (ants[i].x+5, ants[i].y+5), 100)
+        viewCircle = pygame.Surface((600,600), pygame.SRCALPHA)
+        pygame.draw.circle(viewCircle,(255,255,255,100),(ants[i].x+5, ants[i].y+5),100)
+        screen.blit(viewCircle, (0,0))
         ants[i].wander([screen.get_size()[0],screen.get_size()[1]], foods)
         ants[i].display(screen)
     for i in range(len(foods)):
